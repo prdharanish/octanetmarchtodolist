@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="hi" >
+<center  >
+    <h1>STUDENT FORM</h1>
+    <form>
+        <table border="1px" cellspacing="8px">
+           
+            <tr>
+            <tr>
+                <td >Name:</td> <td><input id="input"type="text" placeholder="enter your name" ></td>
+            </tr>
+                   <tr>
+                <td>Age:</td> <td><input id="input1" type="number" placeholder="enter you age"></td>
+            </tr>
+            <tr >
+                <td>Gender:</td> 
+            <td><input id="input2" type="radio" name="gender">Male
+            <input  type="radio" name="gender">Female</td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+            <td><select id="input3">
+                <option >javascript</option>
+                <option>HTML</option>
+                <option>CSS</option>
+            </select>
+            </td>
+           </tr>
+            <tr>
+                <td>E-mail</td> <td><input id="input4" type="email" placeholder="enter your email"></td>
+            </tr>
+                 
+                               
+            
+                </tr>
+        </table>
+      </form>
+    
+    </center>
+    
+ <script src="script.js"></script> 
+</body>
+</html>
+<center>
+    <button style="background-color: aqua;" onclick="add()">save</button></center>
+    <center> <ul id="container">  
+        </ul>
+<script>
+
+    function add(){
+        
+        var input=document.getElementById("input")
+        var input1=document.getElementById("input1")
+        var input2=document.getElementById("input2")
+        var input3=document.getElementById("input3")
+        var input4=document.getElementById("input4")
+        var ul=document.getElementById("container")
+        var list=document.createElement("span")
+        var list1=document.createElement("span")
+        var list2=document.createElement("span")
+        var list3=document.createElement("span")
+        var list4=document.createElement("span")
+        
+        list.innerHTML="<p class='one'>Name: </p>"+input.value+"<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(list)
+        list1.innerHTML="<p class='one'>Age: </p>"+input1.value+"<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(list1)
+        list2.innerHTML="<p class='one'>Gender: </p>"+"Male"+"<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(list2)
+        list3.innerHTML="<p class='one' >Course:  </p>"+input3.value+"<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(list3)
+        list4.innerHTML="<p class='one'>Email: </p>"+input4.value+"<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(list4)
+            }
+function deleteitem(event){
+    event.target.parentElement.remove()
+}
+
+        
+        
+</script>
+    </center>
